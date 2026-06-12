@@ -1,0 +1,12 @@
+pandas 
+scikit-learn
+uvicorn 
+fastapi
+joblib
+matplotlib
+seaborn
+lightgbm
+sqlalchemy
+psycopg2-binary
+fastapi
+streamlit
