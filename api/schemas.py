@@ -1,0 +1,23 @@
+from pydantic import BaseModel, Field
+
+class CreditRequest(BaseModel):
+    EXT_SOURCE_1: float = Field(..., description="Source externe 1")
+    EXT_SOURCE_2: float = Field(..., description="Source externe 2")
+    EXT_SOURCE_3: float = Field(..., description="Source externe 3")
+    INSTAL_AMT_PAYMENT_sum: float = Field(..., description="Somme des montants des paiements d'échéances")
+    AMT_CREDIT: float = Field(..., description="Montant du crédit")
+    CC_AMT_BALANCE_mean: float = Field(..., description="Solde moyen de la carte de crédit")
+    DAYS_BIRTH: float = Field(..., description="Jours depuis la naissance")
+    AMT_ANNUITY: float = Field(..., description="Montant de l'annuité")
+    AMT_GOODS_PRICE: float = Field(..., description="Montant du prix des biens")
+    DAYS_EMPLOYED: float = Field(..., description="Jours depuis l'emploi")
+    PREV_CNT_PAYMENT_mean: float = Field(..., description="Nombre moyen de paiements précédents")
+    INSTAL_PAYMENT_DIFF_mean: float = Field(..., description="Différence moyenne des paiements d'échéance")
+    DAYS_ID_PUBLISH: float = Field(..., description="Jours depuis la publication de l'identité")
+    PREV_CNT_PAYMENT_max: float = Field(..., description="Nombre maximum de paiements précédents")
+    INSTAL_AMT_PAYMENT_mean: float = Field(..., description="Montant moyen des paiements d'échéances")
+    POS_MONTHS_BALANCE_min: float = Field(..., description="Nombre minimum de mois de solde dans les données de point de vente")
+    BUREAU_AMT_CREDIT_SUM_DEBT_mean: float = Field(..., description="Montant moyen de la dette de crédit dans les données du bureau")
+    BUREAU_AMT_CREDIT_SUM_mean: float = Field(..., description="Montant moyen du crédit dans les données du bureau")
+    BUREAU_DAYS_CREDIT_max: float = Field(..., description="Nombre maximum de jours de crédit dans les données du bureau")
+    POS_SK_DPD_DEF_mean: float = Field(..., description="Délai moyen de défaut de paiement dans les données de point de vente")
