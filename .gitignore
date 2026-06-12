@@ -17,7 +17,8 @@ htmlcov/
 
 # Modèles
 *.pkl
-
+# Jeu de donnée
+.csv
 # Données lourdes
 dataset/
 
