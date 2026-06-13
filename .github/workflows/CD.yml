@@ -41,6 +41,8 @@ jobs:
           --exclude='.github' \
           --exclude='tests' \
           --exclude='*.pyc' \
+          --exclude='htmlcov' \
+          --exclude='dataset' \
           --exclude='__pycache__' \
           --exclude= 'Notebook'\
           --exclude= '*.csv' \
