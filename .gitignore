@@ -18,7 +18,7 @@ htmlcov/
 # Modèles
 *.pkl
 # Jeu de donnée
-Notebook/credit_accord.csv
+*.csv
 # Données lourdes
 dataset/
 
