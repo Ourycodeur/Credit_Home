@@ -39,6 +39,8 @@ jobs:
           rsync -av \
           --exclude='.git' \
           --exclude='.github' \
+          --exclude='tests' \
+          
           ./ hf-space/
 
       - name: Push to Hugging Face
