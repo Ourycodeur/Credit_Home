@@ -39,6 +39,11 @@ jobs:
           rsync -av \
           --exclude='.git' \
           --exclude='.github' \
+          --exclude='tests' \
+          --exclude='*.pyc' \
+          --exclude='__pycache__' \
+          --exclude= 'Notebook'\
+          --exclude= '*.csv' \
           ./ hf-space/
 
       - name: Push to Hugging Face
