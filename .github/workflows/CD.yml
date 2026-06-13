@@ -44,8 +44,8 @@ jobs:
           --exclude='htmlcov' \
           --exclude='dataset' \
           --exclude='__pycache__' \
-          --exclude= 'Notebook'\
-          --exclude= '*.csv' \
+          --exclude= 'Notebook'
+          --exclude= '*.csv' 
           ./ hf-space/
 
       - name: Push to Hugging Face
