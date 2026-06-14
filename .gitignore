@@ -16,7 +16,7 @@ htmlcov/
 .ipynb_checkpoints/
 
 # Modèles
-*.pkl
+
 # Jeu de donnée
 *.csv
 # Données lourdes
