@@ -17,14 +17,14 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DATABASE_URL: postgresql://postgres:root@localhost:5432/Deploy_project
+      DATABASE_URL: postgresql://postgres:root@localhost:5432/deploy_project
     services:
       postgres:
         image: postgres:15
         ports:
           - 5432:5432
         env:
-          POSTGRES_DB: Deploy_project
+          POSTGRES_DB: deploy_project
           POSTGRES_PASSWORD: root
           POSTGRES_USER: postgres
         options: >-
