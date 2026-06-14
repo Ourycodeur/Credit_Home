@@ -16,6 +16,23 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_db
+    services:
+      postgres:
+        image: postgres:15
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_DB: Deploy_project
+          POSTGRES_PASSWORD: root
+          POSTGRES_USER: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
 
       - name: Checkout repository
