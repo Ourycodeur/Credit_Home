@@ -37,11 +37,10 @@ jobs:
         run: |
 
           rsync -av \
-          --exclude='.git' \
-          --exclude='.github' \
-          --exclude='tests' \
-          
-          ./ hf-space/
+            --exclude='.git' \
+            --exclude='.github' \
+            
+            ./ hf-space/
 
       - name: Push to Hugging Face
         env:
