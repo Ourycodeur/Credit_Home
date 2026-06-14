@@ -12,3 +12,4 @@ fastapi
 streamlit
 pytest
 pytest-cov
+httpx2
