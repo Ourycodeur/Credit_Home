@@ -11,6 +11,9 @@ from api.schemas import CreditRequest
 from sqlalchemy.orm import Session
 from db.models import Base
 from pathlib import Path
+import json
+import time
+
 
 # Création de la base de données
 Base.metadata.create_all(bind=engine)
@@ -43,6 +46,7 @@ def predict(personal_input: CreditRequest, db: Session = Depends(get_db)):
     # Enregistrement des données d'entrée dans la base de données
     #personal_input_db = create_personal_input(db, personal_input)
     
+    start_time = time.time()
     # Préparation des données pour la prédiction
     input_dict = personal_input.model_dump()
     input_data = pd.DataFrame([input_dict])
@@ -70,6 +74,24 @@ def predict(personal_input: CreditRequest, db: Session = Depends(get_db)):
         probability=prediction_proba
     )
     
+    # Calcul du temps d'exécution
+    execution_time = time.time() - start_time
+    
+    # Structure du log
+    log_data = {
+        "input_data": input_dict,
+        "predicted_label": prediction,
+        "probability": probability,
+        "execution_time": execution_time,
+        "status": "success",
+        #"features": input_dict.dict(),
+    }
+    # Enregistrement du log dans un fichier JSON
+    
+    log_file_path = BASE_DIR / "../monitoring/logs/prediction_logs.jsonl"
+    with open(log_file_path, "a") as log_file:
+        json.dump(log_data, log_file)
+        log_file.write("\n")
    
     
     
