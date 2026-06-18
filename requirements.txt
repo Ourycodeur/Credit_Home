@@ -13,3 +13,4 @@ streamlit
 pytest
 pytest-cov
 httpx2
+evidently
