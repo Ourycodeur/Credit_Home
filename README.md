@@ -48,7 +48,7 @@ Endpoints :
 Construction :
 
 ```bash
-docker build -t home-credit-api .
+docker build -t p8-api:latest .
 ```
 
 ## ⚙️ CI/CD
