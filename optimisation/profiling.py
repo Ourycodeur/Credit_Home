@@ -6,7 +6,8 @@ import pandas as pd
 model = joblib.load(
     "C:\\Users\\El. OURY BALDE\\Documents\\P8\\Modèle\\lgbm_credit_model.pkl"
 )
-
+# Correction du goulot d'étranglement
+model.set_params(n_jobs = 1)
 sample = pd.DataFrame([{
     "EXT_SOURCE_1":0.4,
     "EXT_SOURCE_2":0.3,
